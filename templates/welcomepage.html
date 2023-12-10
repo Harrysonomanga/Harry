@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ascendancy Advisors</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+    {% load static %}
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/clients/img_3.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}s" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+   <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Ascendancy Advisors</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'about' %}">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'services' %}">Services</a></li>
+
+          <li><a class="nav-link scrollto" href="{% url 'team' %}">Team</a></li>
+          <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'partners' %}">Our Partners</a></li>
+              <li><a href="{% url 'clients' %}">Our Clients</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'register' %}">Membership/Sign Up</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Inner Page</li>
+        </ol>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+                <h1>Welcome to Ascendancy Advisors</h1>
+
+        <p>Congratulations on taking the first step towards becoming a member of Ascendancy Advisors. We are thrilled to welcome you to our community of change-makers dedicated to making a positive impact in the business world.</p>
+
+        <p>At Ascendancy Advisors, we believe in the power of collaboration and innovation. Our mission is to provide you with the tools and opportunities to not only succeed in the business landscape but to thrive as a visionary leader.</p>
+
+        <div class="opportunities-section">
+            <h2>Opportunities Await You</h2>
+            <ul class="opportunities-list">
+                <li>Access to Exclusive Events and Workshops</li>
+                <li>Networking with Industry Leaders</li>
+                <li>Opportunity to Lead Transformative Projects</li>
+                <li>Mentorship from Seasoned Experts</li>
+            </ul>
+        </div>
+
+        <p>As a member, you are not just joining a consultancy firm; you are becoming part of a dynamic community that opens doors to a world of opportunities. We believe in your potential to drive change, and we are here to support you every step of the way.</p>
+          <div class="upload-section">
+            <h2>Document Upload</h2>
+            <p>Please upload the required documents for verification.</p>
+           <p>Welcome to Ascendancy Advisors! As part of our membership registration process, we kindly request you to upload the following documents for verification:</p>
+
+    <ul>
+        <li><strong>ID or Passport:</strong> Please upload a clear copy of your national ID or passport.</li>
+        <li><strong>Supporting Documents:</strong> Include any additional supporting documents that may strengthen your membership application.</li>
+    </ul>
+
+    <p>Your uploaded documents are crucial for our verification process and ensuring the authenticity of our members. <a href="{% url 'upload' %}" target="_blank">Click here to upload the documents</a>
+:</p>
+
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+        {% for image in images %}
+            <div class="col mb-2">
+                <img src="{{ image.image.url }}" alt="Uploaded Image" style="width: 300px; height: 300px;"> <br>
+                <p><strong>Title:</strong> {{ image.title }}</p>
+                <a href="/imagedelete/{{ image.id }}" class="btn btn-outline-danger">DELETE</a>
+            </div>
+        {% endfor %}
+    </div>
+        <div class="payment-section">
+            <h2>Payment</h2>
+            <p>To complete your registration, please pay the commitment fee of KES5000.</p>
+            <form method="post" action="{% url 'stk' %}" class="m-lg-2">
+            {% csrf_token %}
+    <label for="phone">Phone Number :</label>
+    <input type="text" value="254" name="phone" placeholder="phone number" required="required">
+    <br><br>
+
+    <label for="amount">Amount :</label>
+    <input type="number" name="amount" placeholder="Amount" required="required">
+    <br><br>
+
+    <button type="submit" class="btn btn-outline-success">Pay</button>
+
+    </form><!-- Add your payment form here -->
+            <!-- Example: <input type="text" name="credit_card" placeholder="Credit Card Number" /> -->
+            <!-- Example: <input type="text" name="expiry_date" placeholder="Expiry Date" /> -->
+            <!-- Example: <input type="text" name="cvv" placeholder="CVV" /> -->
+            <!-- Example: <button class="btn btn-primary" type="submit">Pay Now</button> -->
+        </div>
+    </div>
+
+      </div>
+
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p> Subscribe to our newsletter and receive latest industry trends, insights and valuable resources directly to your inbox.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Ascendancy Advisors</h3>
+            <p>
+              Ikigai, <br>
+              Peponi Road Drive, Westlands<br>
+              Kenya<br><br>
+              <strong>Phone:</strong> +254701858653<br>
+              <strong>Email:</strong> ascendancy@advisors.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Market Analysis and Research</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Strategic Planning and Execution</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Digital transformation and Innovation</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Stay updated with the latest news, insights and industry trends by following us on our social media platforms</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Ascendancy Advisors</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">Harrisonomanga</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
